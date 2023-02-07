@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number game</title>
+    <style>
+        html{font-family: monospace; color: red;}
+        body{width: 50%; max-width: 800px;
+             min-width: 480px; margin: 0 auto; background-image: url(https://media.giphy.com/media/3o7P4F86TAI9Kz7XYk/giphy.gif);
+                background-repeat: no-repeat; background-size: 100%;} 
+        h1,h3{text-align: center;} 
+        p{font-size: x-large;}        
+    </style>
+</head>
+<body>
+    <h1><b>GUESS THE NUMBER......</b></h1>
+    <h3><u>by RPM Corp.</u></h3>
+    <p>This  game will select a random number automatically between 1-10. Try 
+        your fate and guess it.</p>
+    <div class="form">
+        <label for="guessField">Try your fate:</label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit" 
+            id="submitguess">
+    </div>
+    <script type="text/javascript">
+        var y = Math.floor(Math.random() * 10 + 1);
+        var guess = 1;
+        document.getElementById("submitguess").onclick = function(){
+            var x = document.getElementById("guessField").value;
+            if(x == y)
+            {alert("CONGRATULATIONS!!! I NEED FATE LIKE YOU... YOU HAVE GUESSED THE RIGHT NUMBER IN JUST " + guess + " GUESSES ");}
+            else if(x > y){guess++; 
+                alert("OOPS...SORRY!!! TRY A SMALLER NUMBER");}
+            else{guess++;
+                alert("OOPS...SORRY!!! TRY A GREATER NUMBER");}
+        }
+    </script>
+</body>
+</html>
